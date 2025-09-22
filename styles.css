@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font: 16px "Open Sans";
+    font-weight: 400;
+    color: aliceblue;
+}
+
+html, body, .page {
+    width: 100svw;
+    height: 100svh;
+}
+
+/* Стиль всей страницы */
+.page {
+    display: grid;
+    grid-template-areas: ". . . ."
+                         ". gtl gtr ."
+                         ". gbl gbr ."
+                         ". . . .";
+
+    background-color: rgb(22, 21, 21);
+    padding: 8rem;
+}
+
+/* Обработка дочерних элементов grid-контейнера */
+.gc {text-align: center; position: relative;}
+.gtl {grid-area: gtl; text-align: left;}
+.gtr {grid-area: gtr;}
+.gbl {grid-area: gbl; text-align: left;}
+.gbr {grid-area: gbr;}
+
+/* Стиль основного заголовка */
+.heading {
+    font-weight: 800;
+    font-size: 4rem;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: -0.5rem;
+}
+
+/* Стиль основного текста */
+.text {width: 80%;}
+
+/* Стиль кнопок скачать */
+.button {
+    padding: 6px;
+    color: black;
+}
+.button_play_market {background-color: rgb(223, 252, 186); transition: 0.2s;}
+.button_play_market:hover {background-color: rgb(172, 201, 134); transition: 0.2s;}
+.button_website {background-color: rgb(188, 226, 236); transition: 0.2s;}
+.button_website:hover {background-color: rgb(123, 161, 172); transition: 0.2s;}
+.button_tiktok {background-color: rgb(235, 197, 175); transition: 0.2s;}
+.button_tiktok:hover {background-color: rgb(165, 130, 110); transition: 0.2s;}
+
+/* Стиль основного логотипа */
+.logotype_container {}
+.logotype {position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 1rem; width: 100%; image-rendering: pixelated;}
+
+@media (max-width: 1280px) {
+    .heading {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1080px) {
+    .logotype {
+        position: relative;
+        margin-left: 0;
+        width: 75%;
+    }
+}
+
+@media (max-width: 830px) {
+    * {
+        font-size: 14px;
+    }
+
+    .page {
+        padding: 1rem;
+    }
+
+    /* Стиль всей страницы */
+    .page {
+        display: grid;
+        grid-template-areas: ". . . ."
+                            ". gtr gtr ."
+                            ". gtl gtl ."
+                            ". gbl gbl ."
+                            ". gbr gbr ."
+                            ". . . .";
+    }
+
+    .gc {text-align: center; position: relative; text-align: center;}
+
+    .heading {
+        display: block;
+        position: relative;
+        /* bottom: 0;
+        left: 0; */
+        margin-left: 0;
+    }
+
+    .text {width: 100%; margin-bottom: 1rem;}
+
+    .logotype {
+        position: relative;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .button {
+        padding: 16px;
+        color: black;
+    }
+
+}
